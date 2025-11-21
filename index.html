@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sonu Kumar, Business Development Manager & Marketing Automation Specialist.">
+    <meta name="description" content="Portfolio of Sonu Kumar, Marketing Automation Specialist & Web Operations Executive.">
     <title>Sonu Kumar | Marketing Automation Specialist</title>
     
     <!-- Google Fonts -->
@@ -96,7 +96,7 @@
 
         .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--secondary); }
 
-        /* --- HERO SECTION (UPDATED) --- */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -104,7 +104,6 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Dark overlay on background image */
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
@@ -114,7 +113,6 @@
             position: relative;
         }
 
-        /* Profile Image Styling */
         .profile-img-box {
             width: 180px;
             height: 180px;
@@ -219,6 +217,33 @@
         .section-header p { color: var(--text-light); max-width: 600px; margin: 0 auto; }
         .divider { height: 5px; width: 70px; background: var(--gradient); margin: 1rem auto 0; border-radius: 10px; }
 
+        /* --- ABOUT ME (NEW) --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .about-text h3 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 1rem; }
+        .about-text p { margin-bottom: 1rem; color: var(--text-light); }
+        
+        .personal-info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--accent);
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { font-weight: 600; color: var(--secondary); }
+        .info-val { color: var(--text-light); text-align: right; }
+
         /* --- TIMELINE (EXPERIENCE) --- */
         .timeline { max-width: 800px; margin: 0 auto; position: relative; }
         .timeline::after {
@@ -241,7 +266,8 @@
         .timeline-content ul { list-style: disc; padding-left: 20px; font-size: 0.95rem; color: var(--text); }
 
         /* --- SKILLS --- */
-        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; }
+        .skills-container { margin-bottom: 3rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-bottom: 3rem; }
         .skill-tag {
             background: var(--white); padding: 0.8rem 1.5rem; border-radius: 10px;
             font-weight: 600; box-shadow: 0 2px 5px rgba(0,0,0,0.02); border: 1px solid #e2e8f0;
@@ -249,9 +275,38 @@
         }
         .skill-tag i { color: var(--primary); }
         .skill-tag:hover { transform: translateY(-5px); border-color: var(--primary); background: #f8fafc; }
-        .skill-category { width: 100%; text-align: center; margin: 2rem 0 1rem; color: var(--text-light); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        
+        /* Progress Bars */
+        .progress-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .progress-item { margin-bottom: 1rem; }
+        .progress-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; color: var(--secondary); }
+        .progress-bar-bg { width: 100%; height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+        .progress-bar-fill { height: 100%; background: var(--gradient); border-radius: 5px; width: 0; transition: width 1.5s ease-in-out; }
 
-        /* --- LEADS & SEARCH --- */
+        /* --- PROJECT & LEADS --- */
+        .projects-wrapper { display: flex; justify-content: center; margin-bottom: 4rem; }
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-width: 400px;
+            width: 100%;
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.3); }
+        .project-img { height: 160px; background: var(--secondary); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 3rem; }
+        .project-content { padding: 1.5rem; }
+        .project-content h3 { margin-bottom: 0.5rem; font-size: 1.2rem; color: var(--secondary); }
+        .project-content p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem; }
+        
+        /* Leads Search */
         .search-wrapper { max-width: 500px; margin: 0 auto 3rem; position: relative; }
         .search-input {
             width: 100%; padding: 1rem 1.5rem; padding-left: 3rem; border: 2px solid #e2e8f0;
@@ -296,6 +351,7 @@
         /* --- RESPONSIVE --- */
         @media (max-width: 968px) {
             .hero h1 { font-size: 2.5rem; }
+            .about-grid { grid-template-columns: 1fr; }
             .stats { width: 95%; gap: 1rem; padding: 1.5rem; }
         }
         @media (max-width: 768px) {
@@ -308,14 +364,6 @@
             .menu-btn { display: block; z-index: 1001; }
             .info-item { flex-direction: column; }
         }
-        @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
-            .profile-img-box { width: 140px; height: 140px; }
-            section { padding: 4rem 5%; }
-            .timeline::after { left: 10px; }
-            .timeline-item { padding-left: 30px; }
-            .timeline-item::after { left: 2px; }
-        }
     </style>
 </head>
 <body>
@@ -325,6 +373,7 @@
         <div class="logo">Sonu Kumar<span style="color:var(--primary)">.</span></div>
         <ul class="nav-links">
             <li><a href="#home" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About Me</a></li>
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
             <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
@@ -336,18 +385,20 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hidden">
-            <!-- Profile Image Added Here -->
+            <!-- Profile Image -->
             <div class="profile-img-box">
                 <img src="https://media.licdn.com/dms/image/v2/D4E03AQENO_QBoH1f7A/profile-displayphoto-shrink_400_400/B4EZcvtWREH0Ak-/0/1748852107839?e=1765411200&v=beta&t=_YjTcLQnpAUafNOLEZZ8gnVm8bKdYX1nbi8-EsrJeSo" alt="Sonu Kumar">
             </div>
             
             <h1>Hi, I'm Sonu Kumar</h1>
             <h3><span class="typewriter-text" id="typewriter"></span></h3>
-            <p>Spearheading marketing automation initiatives to drive business growth. Over 10 years of experience in Email Marketing, CRM Management, and Multi-channel Lead Generation campaigns.</p>
+            <p>I'm a Marketing Automation Specialist with over 10 years of hands-on experience in email marketing, CRM management, and campaign optimization. I bring a results-driven mindset and a strong ability to adapt to evolving marketing technologies.</p>
             
             <div class="btn-container">
                 <a href="#experience" class="btn"><i class="fas fa-user-tie"></i> My Experience</a>
-                <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+                <a href="https://sonu-gadder-portfolio.netlify.app/" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-globe"></i> View Live Website
+                </a>
             </div>
         </div>
     </section>
@@ -359,14 +410,61 @@
             <span class="stat-label">Years Experience</span>
         </div>
         <div class="stat-item">
-            <span class="stat-number" data-target="6">0</span>
-            <span class="stat-label">Automation Tools</span>
+            <span class="stat-number" data-target="10">0</span>
+            <span class="stat-label">Tools Mastered</span>
         </div>
         <div class="stat-item">
             <span class="stat-number" data-target="10000">0</span>
             <span class="stat-label">Leads Generated</span>
         </div>
     </div>
+
+    <!-- NEW ABOUT SECTION -->
+    <section id="about" style="background-color: #fff;">
+        <div class="section-header hidden">
+            <h2>About Me</h2>
+            <p>Executive Web Operations & Marketing Automation Specialist.</p>
+            <div class="divider"></div>
+        </div>
+        
+        <div class="about-grid hidden">
+            <div class="about-text">
+                <h3>Scalable Marketing Systems & Growth.</h3>
+                <p>Passionate about creating scalable marketing systems that drive lead generation and brand growth. My ability to learn quickly and apply new tools strategically has enabled me to contribute significantly to cross-functional teams and meet business objectives effectively.</p>
+                <p>With over 10 years of hands-on experience in email marketing, CRM management, and campaign optimization, I specialize in creating data-driven strategies that enhance engagement and ROI.</p>
+                <p>I'm especially enthusiastic about collaborating with international clients, working across time zones, and adapting to diverse brand voices.</p>
+                
+                <a href="#contact" style="color: var(--primary); font-weight: 600; margin-top: 1rem; display: inline-block;">Download Resume <i class="fas fa-arrow-down"></i></a>
+            </div>
+
+            <div class="personal-info-card">
+                <div class="info-row">
+                    <span class="info-label">Name</span>
+                    <span class="info-val">Sonu Kumar</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Birthday</span>
+                    <span class="info-val">08 July 1995</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Age</span>
+                    <span class="info-val">30 Years</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">City</span>
+                    <span class="info-val">Hisar, Haryana, India</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Education</span>
+                    <span class="info-val">Diploma in CS</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Phone</span>
+                    <span class="info-val">+91 99712-68695</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Experience Section -->
     <section id="experience">
@@ -394,14 +492,14 @@
             <!-- Job 2 -->
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <span class="date">2014 – 2025</span>
-                    <h3>Executive Web Operations</h3>
-                    <h4>Mosaic Digital (HT Media Group Subsidiary)</h4>
+                    <span class="date">2014 – Feb, 2025</span>
+                    <h3>Marketing Automation Specialist</h3>
+                    <h4>Mosaic Digital (100% subsidiary of HT Media Group)</h4>
                     <ul>
-                        <li>10+ years of web operations & marketing automation ownership.</li>
-                        <li>Managed email campaigns, web updates & CRM integrations.</li>
-                        <li>Built automation workflows for events, summits & training.</li>
-                        <li>Implemented lead scoring & journey-based automation.</li>
+                        <li>**Marketing Automation:** Hands-on experience with Pardot, HubSpot, MailChimp, EmailPush, SalesPush, Infinito, ConstantContact; strong understanding of Marketo.</li>
+                        <li>**Lead Management:** Implemented Lead Scoring & Nurturing Strategies to boost conversion.</li>
+                        <li>**Push & Social:** Worked on workflows using MoEngage, Hootsuite, and Buffer.</li>
+                        <li>**Analytics:** A/B Testing, Audience Segmentation, and ROI Analysis.</li>
                     </ul>
                 </div>
             </div>
@@ -411,8 +509,8 @@
                 <div class="timeline-content" style="border-left: 4px solid var(--accent);">
                     <span class="date">2011 – 2014</span>
                     <h3>Diploma in Computer Science</h3>
-                    <h4>GJU Hisar, Haryana</h4>
-                    <p style="font-size:0.95rem; color:var(--text);">Built a strong foundation in technical skills, HTML, and logic development.</p>
+                    <h4>Guru Jambheshwar University of Science and Technology, Hisar</h4>
+                    <p style="font-size:0.95rem; color:var(--text);">Built a solid technical foundation in web operations and logic development.</p>
                 </div>
             </div>
         </div>
@@ -421,53 +519,109 @@
     <!-- Skills Section -->
     <section id="skills" style="background-color: #fff;">
         <div class="section-header hidden">
-            <h2>Technical Proficiency</h2>
+            <h2>Technical Skills</h2>
             <p>Expertise in advanced MarTech tools, CRM platforms, and creative technologies.</p>
             <div class="divider"></div>
         </div>
         
         <div class="hidden">
-            <div class="skill-category">Automation & CRM Tools</div>
+            <!-- Skill Tags -->
             <div class="skills-grid">
                 <div class="skill-tag"><i class="fas fa-bullseye"></i> Marketo</div>
                 <div class="skill-tag"><i class="fas fa-cloud"></i> Pardot</div>
                 <div class="skill-tag"><i class="fab fa-hubspot"></i> HubSpot</div>
                 <div class="skill-tag"><i class="fas fa-envelope-open"></i> MailChimp</div>
-                <div class="skill-tag"><i class="fas fa-address-book"></i> Constant Contact</div>
-                <div class="skill-tag"><i class="fas fa-bell"></i> MoEngage</div>
-                <div class="skill-tag"><i class="fas fa-paper-plane"></i> EmailPush</div>
+                <div class="skill-tag"><i class="fab fa-salesforce"></i> Salesforce</div>
+                <div class="skill-tag"><i class="fas fa-chart-line"></i> Google Analytics</div>
+                <div class="skill-tag"><i class="fab fa-html5"></i> HTML/CSS</div>
             </div>
 
-            <div class="skill-category">Technical & Creative</div>
-            <div class="skills-grid">
-                <div class="skill-tag"><i class="fab fa-html5"></i> HTML5 / CSS3</div>
-                <div class="skill-tag"><i class="fas fa-palette"></i> Photoshop</div>
-                <div class="skill-tag"><i class="fas fa-laptop-code"></i> Landing Pages</div>
-                <div class="skill-tag"><i class="fas fa-code"></i> Email Templates</div>
-                <div class="skill-tag"><i class="fas fa-sync"></i> Data Sync</div>
-            </div>
+            <!-- Skill Progress Bars (Based on your percentages) -->
+            <div class="progress-wrapper">
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>Marketing Automation</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%"></div></div>
+                </div>
 
-            <div class="skill-category">Core Competencies</div>
-            <div class="skills-grid">
-                <div class="skill-tag"><i class="fas fa-star"></i> Lead Scoring</div>
-                <div class="skill-tag"><i class="fas fa-users"></i> Segmentation</div>
-                <div class="skill-tag"><i class="fas fa-vial"></i> A/B Testing</div>
-                <div class="skill-tag"><i class="fas fa-chart-pie"></i> Analytics & ROI</div>
-                <div class="skill-tag"><i class="fas fa-shield-alt"></i> GDPR / CAN-SPAM</div>
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>Email Campaign Management</span>
+                        <span>99%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 99%"></div></div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>CRM Integration (Salesforce, HubSpot)</span>
+                        <span>98%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 98%"></div></div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>HTML/CSS for Email Templates</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 92%"></div></div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>A/B Testing & Analytics</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%"></div></div>
+                </div>
+
+                <div class="progress-item">
+                    <div class="progress-header">
+                        <span>Lead Nurturing & Scoring</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 88%"></div></div>
+                </div>
+                 <div class="progress-item">
+                    <div class="progress-header">
+                        <span>Google Analytics & UTM Tracking</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%"></div></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio / Leads Section -->
+    <!-- Portfolio Section -->
     <section id="portfolio">
         <div class="section-header hidden">
-            <h2>Lead Generation Portfolio</h2>
-            <p>Clients and brands I have generated leads for via automated campaigns and digital strategies.</p>
+            <h2>Portfolio & Lead Generation</h2>
+            <p>Live web projects and a list of brands I have generated leads for.</p>
             <div class="divider"></div>
         </div>
 
-        <!-- Search -->
+        <div class="hidden" style="margin-bottom: 4rem;">
+            <div class="projects-wrapper">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio</h3>
+                        <p>My personal website showcase and development portfolio.</p>
+                        <a href="https://sonu-gadder-portfolio.netlify.app/" target="_blank" class="btn" style="font-size:0.9rem; padding: 0.6rem 1.5rem;">View Live Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Search -->
         <div class="search-wrapper hidden">
+            <h4 style="text-align:center; margin-bottom:1rem; color:var(--text-light);">Search Clients & Leads</h4>
             <i class="fas fa-search search-icon"></i>
             <input type="text" id="searchLeads" class="search-input" placeholder="Search clients (e.g. 'Jindal', 'Logistics')...">
         </div>
@@ -490,7 +644,7 @@
 
         <div class="contact-container hidden">
             <h3>Contact Information</h3>
-            <p style="color: var(--text-light);">Open for Business Development & Automation Opportunities</p>
+            <p style="color: var(--text-light);">Open for new opportunities in Digital Marketing & Automation.</p>
             
             <div class="contact-info-box">
                 <div class="info-item">
@@ -499,7 +653,15 @@
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
-                    <a href="tel:+919971268695">+91-9971268695</a>
+                    <a href="tel:+919971268695">+91-99712-68695</a>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <a href="tel:+917988080767">+91-79880-80767</a>
+                </div>
+                 <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Hisar, Haryana, 125001</span>
                 </div>
             </div>
 
@@ -508,16 +670,16 @@
             <div class="social-links">
                 <a href="#" class="social-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 <a href="mailto:snuvrma77@gmail.com" class="social-btn" title="Email"><i class="fas fa-envelope"></i></a>
-                <a href="tel:+919971268695" class="social-btn" title="Phone"><i class="fas fa-phone"></i></a>
+                <a href="https://sonu-gadder-portfolio.netlify.app/" target="_blank" class="social-btn" title="Website"><i class="fas fa-globe"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Sonu Kumar. Marketing Automation Expert.</p>
+        <p>&copy; 2025 Sonu Kumar. Marketing Automation Specialist.</p>
         <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">
-            Business Development Manager • CRM Specialist • Lead Gen Expert
+            snuvrma77@gmail.com | Hisar, Haryana
         </p>
     </footer>
 
@@ -600,7 +762,7 @@
         });
 
         // --- TYPEWRITER EFFECT ---
-        const words = ["Marketing Automation Specialist.", "Business Development Manager.", "CRM Expert.", "Email Marketing Pro."];
+        const words = ["Marketing Automation Specialist.", "Web Operations Executive.", "CRM Expert.", "Email Marketing Pro."];
         let i = 0;
         let timer;
 
